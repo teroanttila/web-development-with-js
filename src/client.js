@@ -51,7 +51,7 @@ const HelloWorldApp = React.createClass ( {
             <div>
                 <h1>Lusso</h1>
 
-                {names.map(name => <HelloWorld name = {name}/> ) }
+                {names.map((name, key) => <HelloWorld key = {key} name = {name}/> ) }
 
                 <Counterizer
                     count = {this.state.count}
