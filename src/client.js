@@ -8,7 +8,7 @@ import axios from 'axios';
 
 function getTussit () {
     return axios.get ('/api/tussi').then ((response) => {
-        console.log (response.data);
+        return response.data;
     });
 }
 
@@ -33,15 +33,25 @@ const HelloWorldApp = React.createClass ( {
         return {
             count: 0,
             name: 'Tero',
-            names: ['Tero']
+            names: []
         };
     },
+
+    componentDidMount: function() {
+        getTussit().then((data) => {
+            this.setState({
+                names: data
+            });
+        });
+    },
+
     render: function () {
         const names = this.state.names;
         return (
             <div>
                 <h1>Lusso</h1>
-                {names.map (name => <HelloWorld name = {name}/> ) }
+
+                {names.map(name => <HelloWorld name = {name}/> ) }
 
                 <Counterizer
                     count = {this.state.count}
@@ -51,6 +61,7 @@ const HelloWorldApp = React.createClass ( {
             </div>
         );
     },
+
     incrementCounter: function () {
         this.setState ( {
             count: this.state.count + 1
