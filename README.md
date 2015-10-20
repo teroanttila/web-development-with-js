@@ -26,4 +26,11 @@ Instructions
 - open browser and go to http://localhost:8888
 - kood kood!
 
-testi
+
+GIT
+
+git status
+git add .
+git commit -m "Tero ..."
+git push origin master
+
