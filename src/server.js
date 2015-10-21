@@ -23,6 +23,7 @@ app.get('/api/tussi', function(req, res, next) {
         'tussi2',
         'tussi3',
         'tussi4',
+        'efrer'
     ]);
 
 });

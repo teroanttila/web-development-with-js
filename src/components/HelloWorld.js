@@ -6,7 +6,7 @@ const HelloWorld = React.createClass ({
         return (
             <div>
                 <Link to = {`/hello/${this.props.name}`}>
-                Hello {this.props.name}
+                Hello hello {this.props.name}
                 </Link>
             </div>
         );

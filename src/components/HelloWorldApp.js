@@ -1,11 +1,5 @@
 import React from 'react';
-import axios from 'axios';
-
-function getTussit() {
-    return axios.get('/api/tussi').then((response) => {
-        return response.data;
-    });
-}
+import api from '../api';
 
 export default React.createClass({
 
@@ -18,7 +12,7 @@ export default React.createClass({
     },
 
     componentDidMount: function() {
-        getTussit().then((data) => {
+        api.getTussit().then((data) => {
             this.setState({
                 names: data
             });
